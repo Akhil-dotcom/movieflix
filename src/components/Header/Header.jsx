@@ -11,11 +11,11 @@ function Header() {
     <div className="header">
       <div className="header__mobile">
         <h2>
-          <RiMovie2Fill color="#B20600" size={30} />
+          <RiMovie2Fill color="#B20600" size={25} />
           <span>MovieFlix</span>
         </h2>
         <button onClick={() => setdrawerState(true)}>
-          <GiHamburgerMenu size={23} color="#fff" />
+          <GiHamburgerMenu size={20} color="#fff" />
         </button>
       </div>
       <Drawer isOpen={drawerState} setdrawerState={setdrawerState} />

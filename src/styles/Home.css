@@ -1,18 +1,25 @@
+
+.sidebar{
+    display: none;
+}
+
 .home__mobile{
     padding: 20px 10px;
 }
 
 .mySwiper{
     overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
-.swiper {
-    width: 80%;
-    height: 220px;
+ .swiper {
+    width: 88%;
+    height: 230px;
   }
   
-  .swiper-slide {
+.swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +30,7 @@
     position: relative;
   }
 
-  .swiper-slide > img{
+   .swiper-slide > img{
       height: 100%;
       width: 100%;
       object-fit: cover;
@@ -38,7 +45,7 @@
       font-size: 20px;
   }
 
-  .swiper-slide > .overlay{
+   .swiper-slide > .overlay{
       height: 100%;
       width: 100%;
       position: absolute;
@@ -46,6 +53,108 @@
       left: 0;
       background-color: rgba(0,0,0,0.25);
   }
+
+  .cards{
+      display: none;
+  }
   
 
   
+  @media (min-width: 640px){
+
+      .cards{
+          display: block;
+          color: #fff;
+          padding-bottom: 20px;
+      }
+      .cardsMobile{
+          display: none;
+      }
+
+      .cards__scroll{
+          height: 400px;
+         overflow: hidden;
+      }
+
+      .cards__single{
+          height: 400px;
+          position: relative;
+          
+      }
+
+
+      .cards__btnrt{
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateX(-50%, -50%) !important;
+      }
+
+      .cards__btnleft{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateX(-50%, -50%) !important;
+      }
+
+      .cardBtn{
+          background-color: rgba(128, 128, 128, 0.5);
+          border-radius: 100px;
+          height: 50px;
+          width: 50px;
+          display: grid;
+          place-items: center;
+          border: none;
+          cursor: pointer;
+      }
+      .cards__single > img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+      }
+
+      .cards__single > h3{
+          position: absolute;
+          color: #fff;
+          text-transform: uppercase;
+          bottom: 30px;
+          left: 30px;
+          z-index: 1;
+          font-size: 40px;
+      }
+      .overlay{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.25);
+    }
+  }
+
+  @media (min-width: 960px){
+    .home{
+        display: flex;
+        width: 100vw;
+        overflow: hidden;
+     }
+     .home__mobile{
+        width: 75%;
+     }
+      .sidebar{
+          width: 25%;
+          display: flex;
+          color: #fff;
+      }
+  }
+
+@media (min-width: 1200px){
+    .home__mobile{
+        width: 80%;
+    }
+
+    .sidebar{
+        width: 25%;
+    }
+}
