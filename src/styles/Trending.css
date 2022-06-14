@@ -1,0 +1,20 @@
+.trending{
+    display: none;
+}
+
+
+@media (min-width: 960px){
+      .trending{
+        display: none;
+      }
+  }
+
+@media (min-width: 1200px){
+
+    .trending{
+        width: 20%;
+        display: flex;
+        color: #fff;
+        border-left: 1px solid rgb(63, 63, 63);
+    }
+}

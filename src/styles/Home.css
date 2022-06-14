@@ -1,10 +1,8 @@
 
-.sidebar{
-    display: none;
-}
+
 
 .home__mobile{
-    padding: 20px 10px;
+    padding: 20px;
 }
 
 .mySwiper{
@@ -140,21 +138,20 @@
         overflow: hidden;
      }
      .home__mobile{
-        width: 75%;
+        width: 70%;
+        padding: 40px 20px 40px;
      }
-      .sidebar{
-          width: 25%;
-          display: flex;
-          color: #fff;
-      }
+
+     .home__mobile > div{
+        width: 90%;
+        margin: 0 auto;
+     }
+
   }
 
 @media (min-width: 1200px){
     .home__mobile{
-        width: 80%;
+        width: 60%;
     }
 
-    .sidebar{
-        width: 25%;
-    }
 }

@@ -1,5 +1,6 @@
 .header{
     height: 8vh;
+    border-bottom: 1px solid rgb(63, 63, 63);
 }
 
 .header__mobile{

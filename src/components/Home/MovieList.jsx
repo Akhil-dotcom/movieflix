@@ -11,7 +11,10 @@ function MovieList({ heading, data }) {
         <div className="movieList__scroll">
           {data.map((item, index) => (
             <div key={index} className="movieList__single">
-              <img src={item} alt="" />
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+                alt=""
+              />
             </div>
           ))}
         </div>

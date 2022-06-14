@@ -1,6 +1,9 @@
 import React from "react";
+import { useEffect } from "react";
 import Cards from "../components/Home/Cards";
 import MovieList from "../components/Home/MovieList";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Trending from "../components/Trending/Trending";
 import "../styles/Home.css";
 
 const data = [
@@ -21,15 +24,49 @@ const data = [
 ];
 
 function Home() {
+  const [popularMovies, setpopularMovies] = React.useState([]);
+  const [topRatedMovies, settopRatedMovies] = React.useState([]);
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+        "https://api.themoviedb.org/3/movie/popular?api_key=57704da1fdc90ae66d9da2869dd53b3f&language=en-US&page=1"
+      );
+      const data = await res.json();
+      setpopularMovies(data.results);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const fetchTopRatedData = async () => {
+    try {
+      const res = await fetch(
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=57704da1fdc90ae66d9da2869dd53b3f&language=en-US&page=1"
+      );
+      const data = await res.json();
+      console.log(data);
+      settopRatedMovies(data.results);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+    fetchTopRatedData();
+  }, []);
+
   return (
     <div className="home">
-      <div className="sidebar">Sidebar</div>
+      <Sidebar />
       <div className="home__mobile">
-        <Cards />
-        <MovieList heading="Trending" data={data} />
-        <MovieList heading="Trending" data={data} />
-        <MovieList heading="Trending" data={data} />
+        <div>
+          <Cards />
+          <MovieList heading="Trending" data={popularMovies} />
+          <MovieList heading="Top Rated" data={topRatedMovies} />
+        </div>
       </div>
+
+      <Trending />
     </div>
   );
 }
